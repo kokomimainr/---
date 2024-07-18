@@ -1,5 +1,5 @@
 // Сделаем отдельный класс для отображения игры в консоли.
-
+const inquirer = require('inquirer')
 class View {
   render() {
     const yourTeamName = 'Elbrus';
@@ -9,6 +9,12 @@ class View {
     console.log(this.game.track.join(''));
     console.log('\n\n');
     console.log(`Created by "${yourTeamName}" with love`);
+  }
+
+  getName() {
+    return inquirer.default.prompt([
+      { type: 'input', name: 'username', message: 'Введи имя:' },
+    ]);
   }
 }
 

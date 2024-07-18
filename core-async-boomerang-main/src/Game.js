@@ -4,6 +4,7 @@
 
 const Hero = require('./game-models/Hero');
 const Enemy = require('./game-models/Enemy');
+const User = require('../db/models/user')
 // const Boomerang = require('./game-models/Boomerang');
 const View = require('./View');
 
@@ -18,6 +19,14 @@ class Game {
     this.view = new View();
     this.track = [];
     this.regenerateTrack();
+    this.name = "";
+  }
+
+  static async getName() {
+    const { username } = await this.view.getName();
+    this.name = username;
+    const userData = await User.create(this.name)
+
   }
 
   regenerateTrack() {
@@ -42,5 +51,7 @@ class Game {
     });
   }
 }
+
+Game.getName()
 
 module.exports = Game;
