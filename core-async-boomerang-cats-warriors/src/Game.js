@@ -16,7 +16,7 @@ class Game {
       position: 0,
       boomerang: this.weapon,
       scores: 0,
-      skin: skin,
+      skin,
     });
     this.enemy = new Enemy(trackLength);
     this.view = new View();

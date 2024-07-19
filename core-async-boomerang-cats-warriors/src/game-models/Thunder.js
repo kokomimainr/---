@@ -1,6 +1,6 @@
-class Boomerang {
+class Shuriken {
   constructor(trackLength) {
-    this.skin = '🐾';
+    this.skin = "⚡";
     this.position = -1;
     this.trackLength = trackLength;
   }
@@ -13,16 +13,10 @@ class Boomerang {
     }
 
     for (let i = 0; i <= distance; i += 1) {
-      setTimeout(
-        () => this.moveLeft(1),
-        30 * (distance + 1),
-      );
+      setTimeout(() => this.moveLeft(1), 30 * (distance + 1));
     }
 
-    setTimeout(
-      () => this.reset(),
-      30 * (distance * 2),
-    );
+    setTimeout(() => this.reset(), 30 * (distance * 2));
   }
 
   reset() {
@@ -38,4 +32,4 @@ class Boomerang {
   }
 }
 
-module.exports = Boomerang;
+module.exports = Shuriken;
